@@ -11,8 +11,9 @@ seed = 0
 i = 0
 prev = None
 
-for i in xrange(length):
+for i in range(length):
     t_map[alphabet[i]] = i
+
 
 def encode(num):
     encoded = ''
@@ -24,11 +25,13 @@ def encode(num):
             break
     return encoded
 
+
 def decode(enc_str):
     decoded = 0
-    for i in xrange(len(enc_str)):
+    for i in range(len(enc_str)):
         decoded = decoded * length + t_map[enc_str[i]]
     return decoded
+
 
 def yeast():
     global prev, seed
@@ -43,5 +46,6 @@ def yeast():
         seed += 1
         return r
 
+
 if __name__ == '__main__':
-    print yeast()
+    print(yeast())
